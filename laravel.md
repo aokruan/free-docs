@@ -12,7 +12,8 @@ $user = DB::table('students')
 $courses_id = DB::table('students_courses')
     ->select('id_courses as id')
     ->where('id', '=', '1')
-    ->get()->map(function ($item) {
+    ->get()
+    ->map(function ($item) {
         return get_object_vars($item);
     });
 
