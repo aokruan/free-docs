@@ -10,3 +10,11 @@
         return File(context.filesDir, "IMG_${sdf.format(Date())}.$extension")
     }
 ```
+
+## Получение координат фотографии
+```kotlin
+val exif:ExifInterface = ExifInterface(imagesResult[0].value!!.path!!) // URI
+val lat = exif.getAttribute(ExifInterface.TAG_GPS_LATITUDE)
+val lng = exif.getAttribute(ExifInterface.TAG_GPS_LONGITUDE)
+val latlng = exif.latLong
+```
