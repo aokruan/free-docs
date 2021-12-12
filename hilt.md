@@ -32,6 +32,7 @@ class AdbsApplication : Application() {}
 
 Добавить запись в `AndroidManifest.xml`:  
 ```xml
+<uses-permission android:name="android.permission.INTERNET"/>
 ...
 <application
     android:name=".AdbsApplication"
